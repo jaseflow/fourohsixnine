@@ -86,6 +86,7 @@
 
       .header__title {
         margin-left: 10px;
+        font-size: 18px;
       }
 
       .review {
@@ -119,6 +120,10 @@
       .review__meta {
         color: #999;
         font-size: 14px;
+      }
+
+      .page-count {
+        display: none;
       }
 
       nav {
@@ -164,16 +169,12 @@
       }
 
       .write-review {
-        width: 100px;
-        position: absolute;
-          left: 50%;
-            margin-left: -50px;
-            text-align: center;
-              text-decoration: none;
-                color: #333;
-                  opacity: 0.5;
-                    font-weight: 500;
-                    transition: opacity 200ms ease;
+        text-align: center;
+        text-decoration: none;
+        color: #333;
+        opacity: 0.5;
+        font-weight: 500;
+        transition: opacity 200ms ease;
       }
 
       .write-review:hover {
@@ -365,6 +366,23 @@
         animation-delay: -0.1s;
       }
 
+      @media(min-width: 1024px) {
+        .write-review {
+          width: 100px;
+          position: absolute;
+          left: 50%;
+          margin-left: -50px;
+        }
+
+        .page-count {
+          display: inline;
+        }
+
+        .header__title {
+          font-size: 22px;
+        }
+      }
+
       @keyframes sk-circleFadeDelay {
         0%,
         39%,
@@ -426,7 +444,7 @@
          </div>
       </a>
       <a href="https://www.innovareviews.com/review/bc7rkcbb" target="_blank" class="write-review">Write a review</a>
-      <p>{{ visible }} of {{ reviews.length }}</p>
+      <p class="page-count">{{ visible }} of {{ reviews.length }}</p>
     </footer>
   </template>
 
